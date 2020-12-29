@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Mario Mora</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="../Scripts/script.js"></script>
+    <script type="text/javascript" src="../json/es_cr.json"></script>
+    <link rel="stylesheet" href="../Style/style.css">
+    <link rel="icon" href="../img/firma.png">
+</head>
+<body ng-app="sitioPersonal" ng-controller="controlador" ng-init="titulo='Ingeniero de Software'">
+    <div class="encabezado">
+        <table class="tablaEncabezado">
+            <tr>
+                <td class="columnaLadoEncabezado">
+                    <img class="foto" src="../img/Tripa.jpg">
+                </td>
+                <td class="columnaCentralEncabezado">
+
+                    <h1>Mario Enrique Mora Chacón</h1>
+                    <h2>{{titulo}}</h2>
+                </td>
+
+                <td class="columnaLadoEncabezado">
+                    <select ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()">
+                        <option value="es-cr" selected>Español</option>
+                        <option value="en-us">English</option>
+                        <option value="pt-br">Português</option>
+                        <option value="de-de">Deutsch</option>                        
+                    </select>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    Este es un texto de prueba
+    <button class="openChatBtn" onclick="openForm()">Chat</button>
+    <div class="openChat">
+        <form>
+            <h1>Chat con Blaise</h1>
+            <label for="msg"><b>Escriba aquí su mensaje:</b></label><br>
+            <textarea class="conversacion" placeholder="Su mensaje..." name="msg" required></textarea><br>
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn close" onclick="closeForm()">
+            Close
+            </button>
+        </form>
+    </div>
+    </body>
+</html>
