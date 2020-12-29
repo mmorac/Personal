@@ -4,11 +4,18 @@
     <title>Mario Mora</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="../Scripts/script.js"></script>
-    <script type="text/javascript" src="../json/es_cr.json"></script>
     <link rel="stylesheet" href="../Style/style.css">
     <link rel="icon" href="../img/firma.png">
 </head>
+
 <body ng-app="sitioPersonal" ng-controller="controlador" ng-init="titulo='Ingeniero de Software'">
+    <header>
+        <div>
+            <button class="botonencabezado">{{textos.botoninicio}}</button>
+            <button class="botonencabezado">{{textos.botonportafolio}}</button>
+            <button class="botonencabezado">{{textos.botoncontacto}}</button>
+        </div>
+    </header>
     <div class="encabezado">
         <table class="tablaEncabezado">
             <tr>
@@ -18,7 +25,7 @@
                 <td class="columnaCentralEncabezado">
 
                     <h1>Mario Enrique Mora Chacón</h1>
-                    <h2>{{titulo}}</h2>
+                    <h2>{{textos.titulo}}</h2>
                 </td>
 
                 <td class="columnaLadoEncabezado">
@@ -33,8 +40,10 @@
             </tr>
         </table>
     </div>
-    Este es un texto de prueba
-    <button class="openChatBtn" onclick="openForm()">Chat</button>
+    <div class="presentacion">
+        {{textos.presentacion}}
+    </div>
+    <button class="openChatBtn" onclick="openForm()">{{textos.botonchat}}</button>
     <div class="openChat">
         <form>
             <h1>Chat con Blaise</h1>
