@@ -4,7 +4,7 @@ var closeChat = document.querySelector(".close")
 
 
 if(openChat != null){
-    openChat.addEventListener("click", openForm);    
+    openChat.addEventListener("click", openForm);
 }
 if(closeChat != null){
     closeChat.addEventListener("click", closeForm);
@@ -25,18 +25,19 @@ function readJSON(filepath){
 }
 
 angular.module('sitioPersonal', []).controller('controlador', ['$scope', function($scope){
+
     $scope.textos = idiomas["es-cr"];
 
     $scope.cambiarIdioma = function(){
         var idiomaSeleccionado = document.getElementById("seleccionIdioma").value;
-        
+
         var fReader = new FileReader();
         fReader.onload = function(e){
             var esp = fReader.readAsText(e.target.result, "UTF-8");
             console.log("Información: " + esp);
         }
-        
-         
+
+
         switch(idiomaSeleccionado){
             case "es-cr":
                 $scope.textos = idiomas["es-cr"];
@@ -50,7 +51,7 @@ angular.module('sitioPersonal', []).controller('controlador', ['$scope', functio
             case "de-de":
                 $scope.textos = idiomas["de-de"];
                 break;
-                
+
         }
     }
 }]);

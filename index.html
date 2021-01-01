@@ -30,7 +30,7 @@
 
                 <td class="columnaLadoEncabezado">
                     <select ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()">
-                        <option value="es-cr" selected>Español</option>
+                        <option value="es-cr">Español</option>
                         <option value="en-us">English</option>
                         <option value="pt-br">Português</option>
                         <option value="de-de">Deutsch</option>
@@ -40,9 +40,54 @@
             </tr>
         </table>
     </div>
-    <div class="presentacion">
-        {{textos.presentacion}}
-    </div>
+    <section>
+        <div class="presentacion">
+            {{textos.presentacion}}
+        </div>
+    </section>
+    <section>
+        <div class="seccionContacto">
+            <table class="tablaContacto">
+                <tr>
+                    <td class="celdaImagenRedSocial">
+                        <a href="mailto:marioemorac@gmail.com">
+                            <img class="redsocial" src="img/Email.png">
+                        </a>
+                    </td>
+                    <td class="celdaImagenRedSocial">
+                        <a href="https://www.linkedin.com/in/mario-e-mora-chacon/" target="_blank">
+                            <img class="redsocial" src="img/LinkedIn.png">
+                        </a>
+                    </td>
+                    <td class="celdaImagenRedSocial">
+                        <a href="https://www.twitter.com/herrbrombeere" target="_blank">
+                            <img class="redsocial" src="img/Twitter.png">
+                        </a>
+                    </td>
+                    <td class="celdaImagenRedSocial">
+                        <a href="https://www.instagram.com/misterblackberry" target="_blank">
+                            <img class="redsocial" src="img/Instagram.png">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="celdaContactoRedSocial">
+                        <label>marioemorac <br> @gmail.com</label>
+                    </td>
+                    <td class="celdaContactoRedSocial">
+                        <label>Mario Mora</label>
+                    </td>
+                    <td class="celdaContactoRedSocial">
+                        <label>herrbrombeere</label>
+                    </td>
+                    <td class="celdaContactoRedSocial">
+                        <label>misterblackberry</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
     <button class="openChatBtn" onclick="openForm()">{{textos.botonchat}}</button>
     <div class="openChat">
         <form>
