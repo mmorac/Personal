@@ -67,7 +67,8 @@ var idiomas = {
         "botoninicio": "Inicio",
         "botonportafolio": "Portafolio",
         "botoncontacto": "Contacto",
-        "botonchat": "Chat con Blaise"
+        "botonchat": "Chat con Blaise",
+        "titulochat": "Conversación con Blaise"
     },
     "en-us":{
         "titulo": "Software Engineer",
@@ -75,7 +76,8 @@ var idiomas = {
         "botoninicio": "Home",
         "botonportafolio": "Portfolio",
         "botoncontacto": "Contact",
-        "botonchat": "Chat with Blaise"
+        "botonchat": "Chat with Blaise",
+        "titulochat": "Chat with Blaise"
     },
     "pt-br": {
         "titulo": "Engenheiro de Software",
@@ -83,7 +85,8 @@ var idiomas = {
         "botoninicio": "Início",
         "botonportafolio": "Portafólio",
         "botoncontacto": "Contato",
-        "botonchat": "Bate-papo com o Blaise"
+        "botonchat": "Bate-papo com o Blaise",
+        "titulochat": "Conversa com o Blaise"
     },
     "de-de": {
         "titulo": "Software Ingenieur",
@@ -91,7 +94,8 @@ var idiomas = {
         "botoninicio": "Anfang",
         "botonportafolio": "Anktenkoffer",
         "botoncontacto": "Kontakt",
-        "botonchat": "Unterhalt mit Blaise"
+        "botonchat": "Unterhalt mit Blaise",
+        "titulochat": "Unterhalt mit Blaise"
    }
 
 

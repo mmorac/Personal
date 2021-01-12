@@ -20,7 +20,7 @@
         <table class="tablaEncabezado">
             <tr>
                 <td class="columnaLadoEncabezado">
-                    <img class="foto" src="img/Tripa.jpg">
+                    <img class="foto" src="img/sentado.jpg">
                 </td>
                 <td class="columnaCentralEncabezado">
 
@@ -29,7 +29,7 @@
                 </td>
 
                 <td class="columnaLadoEncabezado">
-                    <select ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()">
+                    <select class="selectorIdioma" ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()">
                         <option value="es-cr">Español</option>
                         <option value="en-us">English</option>
                         <option value="pt-br">Português</option>
@@ -87,11 +87,11 @@
             </table>
         </div>
     </section>
-
+    
     <button class="openChatBtn" onclick="openForm()">{{textos.botonchat}}</button>
     <div class="openChat">
         <form>
-            <h1>Chat con Blaise</h1>
+            <h1>{{textos.titulochat}}</h1>
             <label for="msg"><b>Escriba aquí su mensaje:</b></label><br>
             <textarea class="conversacion" placeholder="Su mensaje..." name="msg" required></textarea><br>
             <button type="submit" class="btn">Send</button>

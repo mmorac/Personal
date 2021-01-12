@@ -40,6 +40,7 @@ body{
     height: 10rem;
     text-align: center;
     font-family: Techna-Sans;
+    text-shadow: 0.1rem 0.1rem black;
 }
 
 .tablaEncabezado{
@@ -51,6 +52,12 @@ body{
 .columnaLadoEncabezado{
     width: 20%;
     height: 10rem;
+}
+
+.selectorIdioma{
+    background-color: transparent;
+    height: 2rem;
+    width: 7rem;
 }
 
 .columnaCentralEncabezado{
