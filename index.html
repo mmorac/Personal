@@ -6,9 +6,36 @@
     <script src="Scripts/script.js"></script>
     <link rel="stylesheet" href="Style/style.css">
     <link rel="icon" href="img/firma.png">
+
+    <!-- Google Tag Manager 
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TJ5JS54');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body ng-app="sitioPersonal" ng-controller="controlador" ng-init="titulo='Ingeniero de Software'">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ5JS54" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
     <header>
         <div>
             <button class="botonencabezado">{{textos.botoninicio}}</button>
@@ -29,7 +56,7 @@
                 </td>
 
                 <td class="columnaLadoEncabezado">
-                    <select class="selectorIdioma" ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()">
+                    <select class="selectorIdioma" ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()" aria-placeholder="Choose language">
                         <option value="es-cr">Español</option>
                         <option value="en-us">English</option>
                         <option value="pt-br">Português</option>
@@ -46,48 +73,37 @@
         </div>
     </section>
     <section>
+
+    </section>
+    <section>
         <div class="seccionContacto">
             <table class="tablaContacto">
                 <tr>
                     <td class="celdaImagenRedSocial">
-                        <a href="mailto:marioemorac@gmail.com">
-                            <img class="redsocial" src="img/Email.png">
+                        <a href="mailto:marioemorac@gmail.com" class="enlace">
+                            Email
                         </a>
                     </td>
                     <td class="celdaImagenRedSocial">
-                        <a href="https://www.linkedin.com/in/mario-e-mora-chacon/" target="_blank">
-                            <img class="redsocial" src="img/LinkedIn.png">
+                        <a href="https://www.linkedin.com/in/mario-e-mora-chacon/" target="_blank" class="enlace">
+                            LinkedIn
                         </a>
                     </td>
                     <td class="celdaImagenRedSocial">
-                        <a href="https://www.twitter.com/herrbrombeere" target="_blank">
-                            <img class="redsocial" src="img/Twitter.png">
+                        <a href="https://www.twitter.com/herrbrombeere" target="_blank" class="enlace">
+                            Twitter
                         </a>
                     </td>
                     <td class="celdaImagenRedSocial">
-                        <a href="https://www.instagram.com/misterblackberry" target="_blank">
-                            <img class="redsocial" src="img/Instagram.png">
+                        <a href="https://www.instagram.com/codigobymario" target="_blank" class="enlace">
+                            Instagram
                         </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="celdaContactoRedSocial">
-                        <label>marioemorac <br> @gmail.com</label>
-                    </td>
-                    <td class="celdaContactoRedSocial">
-                        <label>Mario Mora</label>
-                    </td>
-                    <td class="celdaContactoRedSocial">
-                        <label>herrbrombeere</label>
-                    </td>
-                    <td class="celdaContactoRedSocial">
-                        <label>misterblackberry</label>
                     </td>
                 </tr>
             </table>
         </div>
     </section>
-    
+
     <button class="openChatBtn" onclick="openForm()">{{textos.botonchat}}</button>
     <div class="openChat">
         <form>
@@ -96,9 +112,10 @@
             <textarea class="conversacion" placeholder="Su mensaje..." name="msg" required></textarea><br>
             <button type="submit" class="btn">Send</button>
             <button type="button" class="btn close" onclick="closeForm()">
-            Close
+                Close
             </button>
         </form>
     </div>
-    </body>
+</body>
+
 </html>
