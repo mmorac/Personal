@@ -2,45 +2,21 @@
 
 <head>
     <title>Mario Mora</title>
+    <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="Scripts/script.js"></script>
     <link rel="stylesheet" href="Style/style.css">
     <link rel="icon" href="img/firma.png">
-
-    <!-- Google Tag Manager 
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TJ5JS54');
-    </script>
-    <!-- End Google Tag Manager -->
 </head>
 
 <body ng-app="sitioPersonal" ng-controller="controlador" ng-init="titulo='Ingeniero de Software'">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJ5JS54" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-
     <header>
         <div>
             <button class="botonencabezado">{{textos.botoninicio}}</button>
             <button class="botonencabezado">{{textos.botonportafolio}}</button>
-            <button class="botonencabezado">{{textos.botoncontacto}}</button>
+            <a href="#contacto">
+                <button class="botonencabezado">{{textos.botoncontacto}}</button>
+            </a>
         </div>
     </header>
     <div class="encabezado">
@@ -71,11 +47,58 @@
         <div class="presentacion">
             {{textos.presentacion}}
         </div>
+        <div class="experiencia">
+            <h2>Experiencia</h2>
+        </div>
+        <div class="timeline">
+            <div class="contenedor">
+                <h5>Full Stack Developer - Ampstek</h5><h6>Jun 2022 - Presente</h6>
+                <p>Migración de aplicaciones</p>                
+            </div>
+            <div class="contenedor">
+                <h5>Senior Full Stack Developer - Hangar Worldwide</h5><h6>Oct 2020 - Jun 2022</h6>
+                <p>Desarrollo de software con C#, SQL, AngularJS, JS</p>    
+            </div>
+            <div class="contenedor">
+                <h5>Senior Software Developer - EY Centroamérica</h5><h6>Oct 2018 - Jul 2020</h6>
+                <p>Desarrollo de soluciones de RPA</p>    
+            </div>
+            <div class="contenedor">
+                <h5>PC Windows Software Engineer - DXC Technology</h5><h6>Mar 2016 - Oct 2018</h6>
+                <p>
+                    Desarrollo de scripts para SO <br>
+                    Desarrollo y soporte de herramienta corporativa para migración <br>
+                    Manejo del programa de Early Adopters de nuevas versiones de Windows
+                </p>                
+            </div>
+            <div class="contenedor">
+                <h5>Customer Care Functional Team Lead - Hewlett Packard Enterprise</h5><h6>Abr 2014 - Mar 2016</h6>
+                <p>
+                    Desarrollo de talento <br>
+                    Manejo de métricas del equipo <br>
+                    Creación y obtención de reportes <br>
+                </p>                
+            </div>
+            <div class="contenedor">
+                <h5>Junior Support Analyst - Hewlett-Packard</h5><h6>Ago 2010 - Abr 2014</h6>
+                <p>Soporte técnico a clientes a nivel global</p>                
+            </div>
+        </div>
     </section>
     <section>
-
+        <div class="experiencia">
+            <h2>Educación</h2>
+        </div>
+        <div class="timeline">
+            <div class="contenedor">
+                <h5>Master Web Front End Developer - Virtual Learning of America</h5><h6>Jun 2022 - Ene 2023</h6>
+            </div>
+            <div class="contenedor">
+                <h5>Ingeniería de Software - Universidad Técnica Nacional</h5><h6>Ene 2011 - Dic 2019</h6>
+            </div>
+        </div>        
     </section>
-    <section>
+    <section id="contacto">
         <div class="seccionContacto">
             <table class="tablaContacto">
                 <tr>

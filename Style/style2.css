@@ -1,0 +1,13 @@
+@font-face{
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Regular.otf");
+}
+
+body{
+   font-family: Montserrat;
+}
+
+.content{
+    height: 40em;
+    border: dotted;
+}
