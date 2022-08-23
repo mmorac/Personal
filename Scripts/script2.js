@@ -44,3 +44,13 @@ function checkBoundary(){
         innerSlider.style.left = `-${inner.width - outer.width}px`;
     }
 }
+
+function showAbout(){
+    document.getElementById("about").style.display = "inline";
+    document.getElementById("portfolio").style.display = "none";
+}
+
+function showPortfolio(){
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "block";
+}

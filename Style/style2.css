@@ -11,3 +11,13 @@ body{
     height: 40em;
     border: dotted;
 }
+
+.fotoperfil{
+    border-radius: 100%;
+    width: 20em;
+}
+
+.about{
+    display: inline;
+    padding: 3em;
+}

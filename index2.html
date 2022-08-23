@@ -30,21 +30,42 @@
                             <a class="nav-link" href="index2.html">Home<span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="index2.html">About<span class="sr-only"></span></a>
+                            <a class="nav-link" href="#" onclick="showAbout()">About<span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="index2.html">Portfolio<span class="sr-only"></span></a>
+                            <a class="nav-link" href="#" onclick="showPortfolio()">Portfolio<span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="index2.html">Contact<span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Language
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">Español</a></li>
+                                <li><a class="dropdown-item" href="#">Português</a></li>
+                                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                              </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </section>
-    <section id="#home">
-        <div class="slider">
+    <section id="about">
+        <div class="container" id="about">
+            <div id="foto" class="about">
+                <img class="fotoperfil" src="img/sentado.jpg">
+            </div>
+            <div class="about">
+                Mario Mora is a Costa Rican software developer, currently working remotely from Costa Rica.
+            </div>
+        </div>
+    </section>
+    <section id="#portfolio">
+        <div class="slider" id="portfolio">
             <div class="slider-inner">
                 <div class="slider-img">
                     <i class="fas fa-futbol"></i>
