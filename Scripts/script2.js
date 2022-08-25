@@ -45,12 +45,30 @@ function checkBoundary(){
     }
 }
 
-function showAbout(){
-    document.getElementById("about").style.display = "inline";
+function showHome(){
+    document.getElementById("home").style.display = "inline";
+    document.getElementById("about").style.display = "none";
     document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
+
+function showAbout(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "block";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";
 }
 
 function showPortfolio(){
+    document.getElementById("home").style.display = "none";
     document.getElementById("about").style.display = "none";
     document.getElementById("portfolio").style.display = "block";
+    document.getElementById("contact").style.display = "none";
+}
+
+function showContact(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "block";
 }
