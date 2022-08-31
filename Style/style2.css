@@ -7,6 +7,18 @@ body{
    font-family: Montserrat;
 }
 
+.barranavegacion{
+    float: right;
+}
+
+.contenedorbarra{
+    text-align: center;
+}
+
+.barra{
+    display: inline-block;
+}
+
 .content{
     height: 40em;
 }
@@ -16,8 +28,27 @@ body{
     width: 20em;
 }
 
-.home{
+.homecontainer{
     display: inline;
+    visibility: visible;
+}
+
+.aboutcontainer{
+    display: block;
+}
+
+.portfoliocontainer{
+    display: inline;
+}
+
+.contactcontainer{
+    display: inline;
+}
+
+.home{
+    width: 50%;
+    display: inline;
+    float: left;
     padding: 3em;
 }
 

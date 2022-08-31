@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("home").style.display = "inline";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";    
+}, false);
+
 let slider = document.querySelector('.slider');
 let innerSlider = document.querySelector('.slider-inner');
 
@@ -45,6 +52,7 @@ function checkBoundary(){
     }
 }
 
+
 function showHome(){
     document.getElementById("home").style.display = "inline";
     document.getElementById("about").style.display = "none";
@@ -67,6 +75,7 @@ function showPortfolio(){
 }
 
 function showContact(){
+    debugger;
     document.getElementById("home").style.display = "none";
     document.getElementById("about").style.display = "none";
     document.getElementById("portfolio").style.display = "none";
