@@ -29,12 +29,33 @@ body{
 }
 
 .homecontainer{
+    padding-left: 20%;
     display: inline;
     visibility: visible;
 }
 
 .aboutcontainer{
     display: block;
+}
+
+.posicion{
+    display: inline-block;
+    padding-top: 2rem;
+    height: 4rem;
+}
+
+.logoempresa{
+    width: 2rem;
+    border-radius: 100%;
+}
+
+.tituloposicion{
+    width: 70%;
+}
+
+.botonampliar{
+    float: right;
+    color: black;
 }
 
 .portfoliocontainer{
@@ -46,10 +67,12 @@ body{
 }
 
 .home{
-    width: 50%;
+    margin-left: 10%;
+    width: 30%;
     display: inline;
     float: left;
     padding: 3em;
+    text-align: center;
 }
 
 .intro{
