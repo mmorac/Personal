@@ -49,8 +49,18 @@ body{
     border-radius: 100%;
 }
 
+.nombreposicion{
+    width: 17em;
+    padding-left: 3em;
+}
+
 .tituloposicion{
     width: 70%;
+}
+
+.tituloabout{
+    height: 10em;
+    padding-top: 3em;
 }
 
 .botonampliar{
@@ -86,7 +96,7 @@ body{
 .urlProyecto{
     text-decoration: none;
     color: inherit;
-    z-index: -1;
+    z-index: 1;
 }
 
 .botonContacto{
