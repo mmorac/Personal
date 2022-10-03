@@ -1,102 +1,83 @@
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("home").style.display = "inline";
+    document.getElementById("about").style.display = "inline";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";    
+}, false);
 
-var openChat = document .querySelector(".openChatBtn");
-var closeChat = document.querySelector(".close")
+let slider = document.querySelector('.slider');
+let innerSlider = document.querySelector('.slider-inner');
 
+let pressed = false;
+let startx;
+let x;
 
-if(openChat != null){
-    openChat.addEventListener("click", openForm);
-}
-if(closeChat != null){
-    closeChat.addEventListener("click", closeForm);
-}
-function openForm() {
-   document.querySelector(".openChat").style.display = "block";
-   document.querySelector(".openChatBtn").style.display = "none";
-}
-function closeForm() {
-   document.querySelector(".openChat").style.display = "none";
-   document.querySelector(".openChatBtn").style.display = "block";
-}
+slider.addEventListener('mousedown', (e)=>{
+    pressed = true;
+    startx = e.offsetX - innerSlider.offsetLeft;
+    slider.style.cursor = 'grabbing';
+    console.log(innerSlider.offsetLeft);
+});
 
-function readJSON(filepath){
-    fetch(filepath).then(function(resp){
-        return resp.json();
-    });
-}
+slider.addEventListener('mouseenter', ()=>{
+    slider.style.cursor = 'grab';
+});
 
-angular.module('sitioPersonal', []).controller('controlador', ['$scope', function($scope){
+slider.addEventListener('mouseup', ()=>{
+    slider.style.cursor = 'grab';
+});
 
-    $scope.textos = idiomas["es-cr"];
+window.addEventListener('mouseup', ()=>{
+    pressed = false;
+});
 
-    $scope.cambiarIdioma = function(){
-        var idiomaSeleccionado = document.getElementById("seleccionIdioma").value;
+slider.addEventListener('mousemove', (e)=>{
+    if(!pressed) return;
 
-        var fReader = new FileReader();
-        fReader.onload = function(e){
-            var esp = fReader.readAsText(e.target.result, "UTF-8");
-            console.log("Información: " + esp);
-        }
+    e.preventDefault();
+    x = e.offsetX;
+    innerSlider.style.left = `${x - startx}px`;
 
+    checkBoundary();
+});
 
-        switch(idiomaSeleccionado){
-            case "es-cr":
-                $scope.textos = idiomas["es-cr"];
-                break;
-            case "en-us":
-                $scope.textos = idiomas["en-us"];
-                break;
-            case "pt-br":
-                $scope.textos = idiomas["pt-br"];
-                break;
-            case "de-de":
-                $scope.textos = idiomas["de-de"];
-                break;
+function checkBoundary(){
+    let outer = slider.getBoundingClientRect();
+    let inner = innerSlider.getBoundingClientRect();
 
-        }
+    if(parseInt(innerSlider.style.left) > 0){
+        innerSlider.style.left = '0px';
+    }else if(inner.right < outer.right){
+        innerSlider.style.left = `-${inner.width - outer.width}px`;
     }
-}]);
+}
 
 
-// IDIOMAS
+function showHome(){
+    document.getElementById("home").style.display = "inline";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
 
-var idiomas = {
+function showAbout(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "block";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "none";
+}
 
-    "es-cr": {
-        "titulo": "Ingeniero de Software",
-        "presentacion": "Mi nombre es Mario Mora, soy costarricense, vivo en Heredia, y soy desarrollador de software.",
-        "botoninicio": "Inicio",
-        "botonportafolio": "Portafolio",
-        "botoncontacto": "Contacto",
-        "botonchat": "Chat con Blaise",
-        "titulochat": "Conversación con Blaise"
-    },
-    "en-us":{
-        "titulo": "Software Engineer",
-        "presentacion": "My name is Mario Mora, I am Costa Rican, living in Heredia, and am a software developer.",
-        "botoninicio": "Home",
-        "botonportafolio": "Portfolio",
-        "botoncontacto": "Contact",
-        "botonchat": "Chat with Blaise",
-        "titulochat": "Chat with Blaise"
-    },
-    "pt-br": {
-        "titulo": "Engenheiro de Software",
-        "presentacion": "Meu nome é Mario Mora, sou costarriquenho, moro em Heredia, e sou desenvolvedor de software.",
-        "botoninicio": "Início",
-        "botonportafolio": "Portafólio",
-        "botoncontacto": "Contato",
-        "botonchat": "Bate-papo com o Blaise",
-        "titulochat": "Conversa com o Blaise"
-    },
-    "de-de": {
-        "titulo": "Software Ingenieur",
-        "presentacion": "Mein name ist Mario Mora, Ich komme aus Costa Rica, wohne in Heredia, und ich bin Software Entwinckler.",
-        "botoninicio": "Anfang",
-        "botonportafolio": "Anktenkoffer",
-        "botoncontacto": "Kontakt",
-        "botonchat": "Unterhalt mit Blaise",
-        "titulochat": "Unterhalt mit Blaise"
-   }
+function showPortfolio(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "block";
+    document.getElementById("contact").style.display = "none";
+}
 
-
+function showContact(){
+    debugger;
+    document.getElementById("home").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("contact").style.display = "block";
 }

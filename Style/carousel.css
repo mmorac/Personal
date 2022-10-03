@@ -11,10 +11,6 @@ i{
     cursor: pointer;
 }
 
-i:hover{
-    color: rgb(167, 11, 245);
-}
-
 .slider{
     position: absolute;
     left: 10%;
@@ -39,13 +35,17 @@ i:hover{
 
 .slider-img{
     height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(127,127,127,1) 35%, rgba(255,255,255,1) 100%);    
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(127,127,127,1) 35%, transparent);
     text-align: center;
     padding: 3rem;
     animation-delay: 0.4s;
 }
 
 .slider-img:hover{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(127,127,127,1) 35%, rgba(0,0,0,1) 100%);
+    background: transparent;
     color: white;
+}
+
+.descripcionApp{
+    padding-top: 5em;
 }

@@ -1,144 +1,409 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Mario Mora</title>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="Scripts/script.js"></script>
-    <link rel="stylesheet" href="Style/style.css">
-    <link rel="icon" href="img/firma.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!--BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--PROGRAMMING LANGUAGE ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!--FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--CUSTOM CSS -->
+    <link rel="stylesheet" href="style/style.css">
+    <!--CAROUSEL CSS -->
+    <link rel="stylesheet" href="style/carousel.css">
+    <!--LINK TO ANGULARJS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Mario Mora</title>
 </head>
 
-<body ng-app="sitioPersonal" ng-controller="controlador" ng-init="titulo='Ingeniero de Software'">
-    <header>
-        <div>
-            <button class="botonencabezado">{{textos.botoninicio}}</button>
-            <button class="botonencabezado">{{textos.botonportafolio}}</button>
-            <a href="#contacto">
-                <button class="botonencabezado">{{textos.botoncontacto}}</button>
+<body>
+    <section id="seccionbarranavegacion">
+        <div class="container contenedorbarra">
+            <nav class="navbar navbar-expand-lg barra">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-toggler="collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="#paginas">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" onclick="showHome()">Inicio<span class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" onclick="showAbout()">Acerca de<span
+                                        class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" onclick="showPortfolio()">Portafolio<span
+                                        class="sr-only"></span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#" onclick="showContact()">Contacto<span
+                                        class="sr-only"></span></a>
+                            </li>
+                            <!--
+                            <li class="nav-item active dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Language
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Español</a></li>
+                                    <li><a class="dropdown-item" href="#">Português</a></li>
+                                    <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                                </ul>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="home">
+        <div class="container homecontainer" id="home">
+            <div id="foto" class="home">
+                <img class="fotoperfil" src="img/intro.png">
+            </div>
+            <div class="home">
+                <p class="textoIntro">
+                    Programa y vive
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="seccionabout">
+        <div class="container aboutcontainer" id="about">
+            <div class="tituloabout">
+                <h3>Experiencia Laboral</h3>
+            </div>
+            <!--ACCORDION CON LAS POSICIONES-->
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingAmpstek">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseAmpstek" aria-expanded="false" aria-controls="collapseAmpstek">
+                            <img class="logoempresa" src="img/logoAmpstek.png">
+                            <span class="nombreposicion">
+                                Ampstek
+                            </span>
+                            <span class="nombreposicion">
+                                Full Stack Developer
+                            </span>
+                            <span class="nombreposicion">
+                                Jun 2022 - Presente
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapseAmpstek" class="accordion-collapse collapse" aria-labelledby="headingAmpstek"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Encargado de migración de ambiente para múltiples aplicaciones desarrolladas en tecnologías .Net, automatizando el proceso de configuración previo, además de asegurarse de la funcionalidad del código.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingHangar">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHangar" aria-expanded="false" aria-controls="collapseHangar">
+                            <img class="logoempresa" src="img/logoHangar.png">
+                            <span class="nombreposicion">
+                                Hangar Worldwide
+                            </span>
+                            <span class="nombreposicion">
+                                Senior Full Stack Developer
+                            </span>
+                            <span class="nombreposicion">
+                                Oct 2020 - Jun 2022
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapseHangar" class="accordion-collapse collapse" aria-labelledby="headingHangar"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Desarrollo web con C#, AngularJS, Javascript, HTML y Bootstrap en distintos proyectos. Desarrollo de CRM con MS Dynamics, y manejo de CI/CD con Azure Devops, GitHub, SourceTree, Octopus, entre otros.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEY">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseEY" aria-expanded="false" aria-controls="collapseEY">
+                            <img class="logoempresa" src="img/logoEY.png">
+                            <span class="nombreposicion">
+                                EY Centroamérica
+                            </span>
+                            <span class="nombreposicion">
+                                Senior Software Developer
+                            </span>
+                            <span class="nombreposicion">
+                                Oct 2018 - Jul 2020
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapseEY" class="accordion-collapse collapse" aria-labelledby="headingEY"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Desarrollo de distintas soluciones de Automatización Robótica de Procesos (RPA) para distintos 
+                            clientes utilizando tecnologías como BluePrism, C# y Visual Basic, consiguiendo automatizar 
+                            alrededor de 5 procesos financieros y 2 de productos de consumo. Adicionalmente, experiencia 
+                            con análisis de datos con Python, así como la implementación de un chatbot con IBM Watson.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingDXC">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseDXC" aria-expanded="false" aria-controls="collapseDXC">
+                            <img class="logoempresa" src="img/logoDXC.png">
+                            <span class="nombreposicion">
+                                DXC Technology
+                            </span>
+                            <span class="nombreposicion">
+                                PC Windows Software Engineer
+                            </span>
+                            <span class="nombreposicion">
+                                Mar 2016 - Oct 2018
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapseDXC" class="accordion-collapse collapse" aria-labelledby="headingDXC"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Encargado de desarrollo de una cantidad de scripts para configuración de S. O. utilizando VBScript.
+                            Parte del equipo de desarrollo y soporte de la aplicación para la migración de ambientes tras el 
+                            proceso de separación corporativo.
+                            A cargo del programa de Early Adopters para nuevas imágenes de Windows.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingHPE">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHPE" aria-expanded="false" aria-controls="collapseHPE">
+                            <img class="logoempresa" src="img/logoHPE.jpg">
+                            <span class="nombreposicion">
+                                Hewlett Packard Enterprise
+                            </span>
+                            <span class="nombreposicion">
+                                Customer Care Functional Team Lead
+                            </span>
+                            <span class="nombreposicion">
+                                Abr 2014 - Mar 2016
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapseHPE" class="accordion-collapse collapse" aria-labelledby="headingHPE"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            A cargo de un equipo compuesto de alrededor de 23 miembros en promedio, logrando promover 
+                            a alrededor de 20 de ellos a nuevas posiciones dentro y fuera de la organización.
+                            Encargado de manejo y análisis de KPIs, consiguiendo mantener siempre un puesto de privilegio
+                            en la organización a pesar del alto porcentaje de promociones que se manejaron.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingHPQ">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHPQ" aria-expanded="false" aria-controls="collapseHPQ">
+                            <img class="logoempresa" src="img/logoHP.png">
+                            <span class="nombreposicion">
+                                Hewlett Packard Enterprise
+                            </span>
+                            <span class="nombreposicion">
+                                Junior Support Analyst
+                            </span>
+                            <span class="nombreposicion">
+                                Ago 2010 - Abr 2014
+                            </span>                
+                        </button>
+                    </h2>
+                    <div id="collapseHPQ" class="accordion-collapse collapse" aria-labelledby="headingHPQ"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Soporte técnico para empleados regulares y posteriormente soporte para empleados "premier" de la empresa,
+                            abarcando desde correo electrónico, soporte general de Windows, hardware e incluso soporte a dispositivos
+                            móviles.
+                            Adicionalmente, tuve recargo de soporte en portugués, así como de revisión de QA para el equipo de soporte en portugués.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tituloabout">
+                <h3>Educación</h3>
+            </div>
+
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingIMF">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseIMF" aria-expanded="false" aria-controls="collapseIMF">
+                            <img class="logoempresa" src="img/logoIMF.png">
+                            <span class="nombreposicion">
+                                IMF Smart Education
+                            </span>
+                            <span class="nombreposicion">
+                                Master en Big Data
+                            </span>
+                            <span class="nombreposicion">
+                                Abr 2023 - Abr 2024
+                            </span>                
+                        </button>
+                    </h2>
+                    <div id="collapseIMF" class="accordion-collapse collapse" aria-labelledby="headingIMF"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Maestría presencial en la ciudad de Madrid, enfocada en la manipulación de datos masivos, mediante el uso de lenguajes de programación como Python y R, además de otras herramientas.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingVLA">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseVLA" aria-expanded="false" aria-controls="collapseVLA">
+                            <img class="logoempresa" src="img/logoVLA.png">
+                            <span class="nombreposicion">
+                                Virtual Learning of America
+                            </span>
+                            <span class="nombreposicion">
+                                Certificación Master Web Front End Developer
+                            </span>
+                            <span class="nombreposicion">
+                                Ago 2022 - Ene 2023
+                            </span>                
+                        </button>
+                    </h2>
+                    <div id="collapseVLA" class="accordion-collapse collapse" aria-labelledby="headingVLA"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Certificación en Front End básico (HTML, CSS, Bootstrap), Javascript, Typescript y frameworks de JS (Angular, React y Vue.JS).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingUTN">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseUTN" aria-expanded="false" aria-controls="collapseUTN">
+                            <img class="logoempresa" src="img/logoUTN.png">
+                            <span class="nombreposicion">
+                                Universidad Técnica Nacional
+                            </span>
+                            <span class="nombreposicion">
+                                Ingeniería de Software
+                            </span>
+                            <span class="nombreposicion">
+                                Ene 2011 - Dic 2018
+                            </span>                
+                        </button>
+                    </h2>
+                    <div id="collapseUTN" class="accordion-collapse collapse" aria-labelledby="headingUTN"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Carrera enfocada en aplicar las técnicas de la ingeniería al desarrollo de software, lenguajes de programación y metodologías modernas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <section id="#portfolio">
+        <div class="slider portfoliocontainer" id="portfolio">
+            <div class="slider-inner">
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/ExploreWeather" target="_blank">
+                        <i class="devicon-python-plain"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Aplicación de seguimiento del clima en consola</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/Conversor" target="_blank">
+                        <i class="devicon-xamarin-original"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Conversor de moneda móvil</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/QatarAlbum" target="_blank">
+                        <i class="devicon-csharp-plain-wordmark"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Aplicación de escritorio para álbum Panini</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/tiendavirtual" target="_blank">
+                        <i class="devicon-html5-plain-wordmark"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Tienda virtual de automóviles</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/MarcaPersonalCPP" target="_blank">
+                        <i class="devicon-cplusplus-plain"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Muestras de C++</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/MarcaPersonalPython" target="_blank">
+                        <i class="devicon-python-plain"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Muestras Python</h4>
+                    </div>
+                </div>
+                <div class="slider-img">
+                    <a href="https://github.com/mmorac/EstructurasDeDatos" target="_blank">
+                        <i class="devicon-csharp-plain-wordmark"></i>
+                    </a>
+                    <div class="descripcionApp">
+                        <h4>Estructuras de datos con C#</h4>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container contactcontainer" id="contact">
+            <a href="https://www.linkedin.com/in/mario-e-mora-chacon/" target="_blank" class="botonContacto">
+                LinkedIn
             </a>
-        </div>
-    </header>
-    <div class="encabezado">
-        <table class="tablaEncabezado">
-            <tr>
-                <td class="columnaLadoEncabezado">
-                    <img class="foto" src="img/sentado.jpg">
-                </td>
-                <td class="columnaCentralEncabezado">
+            <a href="https://www.twitter.com/herrbrombeere" target="_blank" class="botonContacto">
+                Twitter
+            </a>
+            <a href="https://www.instagram.com/codigobymario" target="_blank" class="botonContacto">
+                Instagram
+            </a>
+            <a href="mailto:mario@mariomora.dev" target="_blank" class="botonContacto">
+                E-mail
+            </a>
 
-                    <h1>Mario Enrique Mora Chacón</h1>
-                    <h2>{{textos.titulo}}</h2>
-                </td>
-
-                <td class="columnaLadoEncabezado">
-                    <select class="selectorIdioma" ng-model="idioma" id="seleccionIdioma" ng-change="cambiarIdioma()" aria-placeholder="Choose language">
-                        <option value="es-cr">Español</option>
-                        <option value="en-us">English</option>
-                        <option value="pt-br">Português</option>
-                        <option value="de-de">Deutsch</option>
-                    </select>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-    <section>
-        <div class="presentacion">
-            {{textos.presentacion}}
-        </div>
-        <div class="experiencia">
-            <h2>Experiencia</h2>
-        </div>
-        <div class="timeline">
-            <div class="contenedor">
-                <h5>Full Stack Developer - Ampstek</h5><h6>Jun 2022 - Presente</h6>
-                <p>Migración de aplicaciones</p>                
-            </div>
-            <div class="contenedor">
-                <h5>Senior Full Stack Developer - Hangar Worldwide</h5><h6>Oct 2020 - Jun 2022</h6>
-                <p>Desarrollo de software con C#, SQL, AngularJS, JS</p>    
-            </div>
-            <div class="contenedor">
-                <h5>Senior Software Developer - EY Centroamérica</h5><h6>Oct 2018 - Jul 2020</h6>
-                <p>Desarrollo de soluciones de RPA</p>    
-            </div>
-            <div class="contenedor">
-                <h5>PC Windows Software Engineer - DXC Technology</h5><h6>Mar 2016 - Oct 2018</h6>
-                <p>
-                    Desarrollo de scripts para SO <br>
-                    Desarrollo y soporte de herramienta corporativa para migración <br>
-                    Manejo del programa de Early Adopters de nuevas versiones de Windows
-                </p>                
-            </div>
-            <div class="contenedor">
-                <h5>Customer Care Functional Team Lead - Hewlett Packard Enterprise</h5><h6>Abr 2014 - Mar 2016</h6>
-                <p>
-                    Desarrollo de talento <br>
-                    Manejo de métricas del equipo <br>
-                    Creación y obtención de reportes <br>
-                </p>                
-            </div>
-            <div class="contenedor">
-                <h5>Junior Support Analyst - Hewlett-Packard</h5><h6>Ago 2010 - Abr 2014</h6>
-                <p>Soporte técnico a clientes a nivel global</p>                
-            </div>
         </div>
     </section>
-    <section>
-        <div class="experiencia">
-            <h2>Educación</h2>
-        </div>
-        <div class="timeline">
-            <div class="contenedor">
-                <h5>Master Web Front End Developer - Virtual Learning of America</h5><h6>Jun 2022 - Ene 2023</h6>
-            </div>
-            <div class="contenedor">
-                <h5>Ingeniería de Software - Universidad Técnica Nacional</h5><h6>Ene 2011 - Dic 2019</h6>
-            </div>
-        </div>        
-    </section>
-    <section id="contacto">
-        <div class="seccionContacto">
-            <table class="tablaContacto">
-                <tr>
-                    <td class="celdaImagenRedSocial">
-                        <a href="mailto:marioemorac@gmail.com" class="enlace">
-                            Email
-                        </a>
-                    </td>
-                    <td class="celdaImagenRedSocial">
-                        <a href="https://www.linkedin.com/in/mario-e-mora-chacon/" target="_blank" class="enlace">
-                            LinkedIn
-                        </a>
-                    </td>
-                    <td class="celdaImagenRedSocial">
-                        <a href="https://www.twitter.com/herrbrombeere" target="_blank" class="enlace">
-                            Twitter
-                        </a>
-                    </td>
-                    <td class="celdaImagenRedSocial">
-                        <a href="https://www.instagram.com/codigobymario" target="_blank" class="enlace">
-                            Instagram
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <button class="openChatBtn" onclick="openForm()">{{textos.botonchat}}</button>
-    <div class="openChat">
-        <form>
-            <h1>{{textos.titulochat}}</h1>
-            <label for="msg"><b>Escriba aquí su mensaje:</b></label><br>
-            <textarea class="conversacion" placeholder="Su mensaje..." name="msg" required></textarea><br>
-            <button type="submit" class="btn">Send</button>
-            <button type="button" class="btn close" onclick="closeForm()">
-                Close
-            </button>
-        </form>
-    </div>
+    <script src="Scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

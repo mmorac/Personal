@@ -1,173 +1,143 @@
 @font-face{
-    font-family: Techna-Sans;
-    src:url("../fonts/TechnaSans-Regular.otf");
-}
-
-@font-face{
-    font-family: Manjari;
-    src: url("../fonts/Manjari-Regular.ttf");
-}
-
-html{
-    height: 100%;
-}
-header{
-    text-align: center;
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Regular.otf");
 }
 
 body{
-    background-color:  rgba(2, 82, 156, 0.6);
-    color: whitesmoke;
-    font-family: Manjari;
+   font-family: Montserrat;
+   background-image: url("../img/background.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
 }
 
-.botonencabezado{
-    font-family: Manjari;
-    font-size: medium;
-    background-color: transparent;
-    color: whitesmoke;
-    border-style: none;
-    height: 4rem;
-    width: 7rem;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
+a{
+    text-decoration: none;
 }
 
-.botonencabezado:hover{
-    color:  rgba(2, 82, 156, 0.6);
-    background-color: whitesmoke;
+.barranavegacion{
+    float: right;
 }
 
-.encabezado{
-    width: 100%;
-    height: 10rem;
+.contenedorbarra{
     text-align: center;
-    font-family: Techna-Sans;
-    text-shadow: 0.1rem 0.1rem black;
 }
 
-.tablaEncabezado{
-    padding-top: 0;
-    width: 100%;
-    height: 10rem;
+.barra{
+    display: inline-block;
 }
 
-.columnaLadoEncabezado{
-    width: 20%;
-    height: 10rem;
+.nav-link{
+    color: white;
 }
 
-.selectorIdioma{
-    background-color: transparent;
-    height: 2rem;
-    width: 7rem;
+.content{
+    height: 40em;
 }
 
-.columnaCentralEncabezado{
-    width: 60%;
+.fotoperfil{
+    border-radius: 100%;
+    width: 50em;
 }
 
-.foto{
-    height: 7rem;
+.textoIntro{
+    font-size: larger;
+}
+
+.homecontainer{
+    margin-left: 10rem;
+    width: 80rem;
+    height: 45rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.aboutcontainer{
+    display: block;
+}
+
+.posicion{
+    display: inline-block;
+    padding-top: 2rem;
+    height: 4rem;
+}
+
+.logoempresa{
+    width: 2rem;
     border-radius: 100%;
 }
 
+.accordion-button{
+    background-color: transparent;
+    color: white;
+}
 
+.accordion-item{
+    background-color: transparent;
+    color: white;
+}
 
-.presentacion{
+.nombreposicion{
+    width: 17em;
+    padding-left: 3em;
+}
+
+.tituloposicion{
     width: 70%;
-    margin-left: 15%;
-    margin-top: 5rem;
+}
+
+.tituloabout{
+    height: 10em;
+    padding-top: 3em;
+}
+
+.botonampliar{
+    float: right;
+    color: black;
+}
+
+.portfoliocontainer{
+    display: inline;
     text-align: center;
 }
 
-.experiencia{
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 5rem;
-}
-
-/* TIMELINE */
-
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    background-color: black;
-    top: 0;
-    bottom: 0;
-    left: 10%;
-    margin-left: -3px;
-}
-
-.contenedor {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-    left: 10%;
-}
-
-.contenedor:hover{
-    background-color: rgba(70, 73, 77, 0.3);
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4ss;
-    animation-delay: 0.4ss;
-}
-
-
-.contenedor::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: -2.75%;
-    background-color: white;
-    border: 2px solid black;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-
-/* SECCIÓN CONTACTO */
-
-.seccionContacto{
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 5rem;
+.contactcontainer{
+    margin-left: 5%;
+    margin-top: 10%;
+    width: 100%;
+    display: inline-block;
     text-align: center;
 }
 
-.tablaContacto{
-    width: 70%;
+.home{
+    margin-top: 5em;
     margin-left: 15%;
+    width: 70%;
+    display: inline;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.celdaImagenRedSocial{
-    width: 5rem;
+.intro{
+    width: 30em;
 }
 
-.celdaContactoRedSocial{
-    width: 5rem;
+
+
+.urlProyecto{
+    text-decoration: none;
+    color: inherit;
+    z-index: 0;
 }
 
-.redsocial{
-    height: 3rem;
-}
-
-.enlace{
+.botonContacto{
     position: relative;
     display: inline-block;
     padding: 25px 30px;
     margin: 40px 0;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
@@ -176,46 +146,13 @@ body{
     margin-right: 50px;    
 }
 
-.enlace:hover{
+.botonContacto:hover{
     background: #fff;
     color: #050801;
-    box-shadow: 0 0 5px #fff,
-                0 0 25px #fff,
-                0 0 50px #fff,
-                0 0 200px #fff;
+    box-shadow: 0 0 5px #ccc,
+                0 0 25px #ccc,
+                0 0 50px #ccc,
+                0 0 200px #ccc;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
-}
-
-
-/* SECCIÓN CHATBOT */
-
-.openChatBtn{
-    position: fixed;
-    bottom: 2rem;
-    right: 1rem;
-    border-radius: 10%;
-    background-color: rgba(11, 134, 227,0.6);
-    border-style: none;
-    height: 3rem;
-    width: 7rem;
-    color: white;
-}
-
-.openChat{
-    width: 15rem;
-    height: 30rem;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    border-style: solid;
-    text-align: center;
-    display: none;
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
-}
-
-.conversacion{
-    width: 13rem;
-    height: 20rem;
 }
 
