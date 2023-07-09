@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("home").style.display = "inline";
-    document.getElementById("about").style.display = "inline";
+    document.getElementById("about").style.display = "none";
     document.getElementById("portfolio").style.display = "none";
     document.getElementById("contact").style.display = "none";    
 }, false);
