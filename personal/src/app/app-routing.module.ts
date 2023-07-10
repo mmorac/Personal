@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExperienceComponent } from './components/experience/experience.component';
-import { AboutmeComponent } from './components/aboutme/aboutme/aboutme.component';
+import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { EducationComponent } from './components/education/education.component';
 import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
