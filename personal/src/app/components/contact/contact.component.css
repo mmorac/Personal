@@ -1,0 +1,17 @@
+.icono{
+    height: 4rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.td_icono{
+    height: 7rem;
+    width: 6rem;
+}
+
+table{
+    width: 30rem;
+    margin-left: 25%;
+}
