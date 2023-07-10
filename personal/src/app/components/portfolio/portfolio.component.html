@@ -1,0 +1,10 @@
+<div class="project" *ngFor="let project of projects">
+        <div class="icon_container">
+            <i [className]="project.icon"></i>
+        </div>
+        <div class="text_container">
+            <a href="{{project.url}}" target="_blank">
+                <h4>{{project.name}}</h4>
+            </a>
+        </div>
+</div>

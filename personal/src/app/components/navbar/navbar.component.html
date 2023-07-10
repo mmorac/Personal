@@ -7,29 +7,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link botonMenu" aria-current="page" routerLink="/aboutme">About me</a>
+            <a class="nav-link botonMenu" aria-current="page" routerLink="/aboutme">{{currentTexts.aboutme}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link botonMenu" routerLink="/experience">Experience</a>
+            <a class="nav-link botonMenu" routerLink="/experience">{{currentTexts.experience}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link botonMenu" routerLink="/education">Education & Skills</a>
+            <a class="nav-link botonMenu" routerLink="/education">{{currentTexts.education}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link botonMenu" routerLink="/portfolio">Portfolio</a>
+            <a class="nav-link botonMenu" routerLink="/portfolio">{{currentTexts.portfolio}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link botonMenu" routerLink="/contact">Contact</a>
+            <a class="nav-link botonMenu" routerLink="/contact">{{currentTexts.contact}}</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle botonIdiomas" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Language
+              {{currentTexts.language}}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Español</a></li>
-              <li><a class="dropdown-item" href="#">English</a></li>
-              <li><a class="dropdown-item" href="#">Português</a></li>
-              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+              <li><a class="dropdown-item" (click)="changeLanguage('es')">Español</a></li>
+              <li><a class="dropdown-item" (click)="changeLanguage('en')">English</a></li>
+              <li><a class="dropdown-item" (click)="changeLanguage('pt')">Português</a></li>
+              <li><a class="dropdown-item" (click)="changeLanguage('de')">Deutsch</a></li>
             </ul>
           </li>
         </ul>

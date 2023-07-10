@@ -5,3 +5,8 @@
 .tech_stack{
     height: 3rem;
 }
+
+.header{
+    background-color: rgb(0, 4, 128);
+    color: white;
+}

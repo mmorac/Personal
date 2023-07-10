@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
-import { PortfolioComponent } from './components/portfolio/portfolio/portfolio.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
