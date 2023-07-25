@@ -5,7 +5,7 @@
   <title>Mario Mora</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="../src/assets/img/Logo.ico">
+  <link rel="icon" type="image/x-icon" href="assets/img/Logo.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
@@ -15,5 +15,72 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+  <script>
+
+    var sliding = startClientX = startPixelOffset = pixelOffset = currentSlide = targetSlide = 0;
+      slideCount = $('.carousel-item').length;
+      
+      $('#user-role-caro .carousel-inner .carousel-item').on('mousedown touchstart', slideStart);
+      $('#user-role-caro .carousel-inner .carousel-item').on('mouseup touchend', slideEnd);
+      $('#user-role-caro .carousel-inner .carousel-item').on('mousemove touchmove', slide);
+      
+      /** Triggers when slide event started  */
+      function slideStart(event) {
+        // If it is mobile device redefine event to first touch point
+        if (event.originalEvent.touches)
+          event = event.originalEvent.touches[0];
+        // If sliding not started yet store current touch position to calculate distance in future.
+        if (sliding == 0) {
+          sliding = 1; // Status 1 = slide started.
+          startClientX = event.clientX;
+        }
+      }
+      
+      /** Occurs carousel image is being slide.  */
+      function slide(event) {
+        event.preventDefault();
+        if (event.originalEvent.touches)
+          event = event.originalEvent.touches[0];
+        // Distance of slide.
+        var deltaSlide = event.clientX - startClientX;
+        // If sliding started first time and there was a distance.
+        if (sliding == 1 && deltaSlide != 0) {
+          sliding = 2; // Set status to 'actually moving'
+          startPixelOffset = pixelOffset; // Store current offset
+        }
+        
+        //  When user move carousel
+        if (sliding == 2) {
+          // Means that user slide 1 pixel for every 1 pixel of mouse movement.
+          var touchPixelRatio = 1;
+          // Check for user doesn't slide out of boundaries
+          if ((currentSlide == 0 && event.clientX > startClientX) ||
+             (currentSlide == slideCount - 1 && event.clientX < startClientX))
+            // Set ratio to 3 means image will be moving by 3 pixels each time user moves it's pointer by 1 pixel. (Rubber-band effect)
+            touchPixelRatio = 3;
+          // Calculate move distance.
+          pixelOffset = startPixelOffset + deltaSlide / touchPixelRatio;
+        }
+      }
+      
+      /** When user release pointer finish slide moving.  */
+      function slideEnd(event) {
+        if (sliding == 2){
+          // Reset sliding.
+          sliding = 0;
+          // Calculate which slide need to be in view.
+          currentSlide = pixelOffset < startPixelOffset ? currentSlide + 1 : currentSlide -1;
+          // Make sure that unexisting slides weren't selected.
+          currentSlide = Math.min(Math.max(currentSlide, 0), slideCount - 1);
+          // Since in this example slide is full viewport width offset can be calculated according to it.
+          pixelOffset = currentSlide * -$('.carousel-inner').width();
+          targetSlide = currentSlide + 1;
+          $('.carousel-indicators li:nth-child('+targetSlide+')').click();
+        }
+      }
+    
+    </script>
+
 </body>
 </html>

@@ -1,73 +1,13 @@
 <div class="container">
-    <div class="card position">
+    <div class="card position" *ngFor="let experience of experiences">
         <div class="card-header header">
-            Junior Software Engineer || Alten Delivery Centre || April 2023 - Present
+            {{experience["position"]}} || {{experience["company"]}} || {{experience["time"]}}
         </div>
         <div class="card-body">
-            Full Stack Development <br>
-            Digital Transformation Consultant
+            {{experience["description"]}}
         </div>
         <div class="card-footer">
-            <img class="tech_stack" src="../../../../assets/img/Angular.png">
-            <img class="tech_stack" src="../../../../assets/img/DotNetCore.png">
-            <img class="tech_stack" src="../../../../assets/img/CSharp.png">
-            <img class="tech_stack" src="../../../../assets/img/MySQL.png">
+            <img class="tech_stack" *ngFor="let tecnologia of experience['technologies']" src="../../../../assets/img/{{tecnologia}}.png">
         </div>
     </div>
-    <div class="card position">
-        <div class="card-header header">
-            Software Engineer || Ampstek || June 2022 - December 2022
-        </div>
-        <div class="card-body">
-            Applications migration
-        </div>
-        <div class="card-footer">
-            <img class="tech_stack" src="../../../../assets/img/Ansible.png">
-            <img class="tech_stack" src="../../../../assets/img/DotNetCore.png">
-        </div>
-    </div>
-    <div class="card position">
-        <div class="card-header header">
-            Senior Software Engineer || Hangar || October 2020 - June 2022
-        </div>
-        <div class="card-body">
-            Full Stack Development
-        </div>
-        <div class="card-footer">
-            <img class="tech_stack" src="../../../../assets/img/Angular.png">
-            <img class="tech_stack" src="../../../../assets/img/DotNetCore.png">
-            <img class="tech_stack" src="../../../../assets/img/CSharp.png">
-            <img class="tech_stack" src="../../../../assets/img/SQLServer.png">
-        </div>
-    </div>
-    <div class="card position">
-        <div class="card-header header">
-            Senior Software Developer || EY Centroamérica || October 2018 - July 2020
-        </div>
-        <div class="card-body">
-            Full Stack Development <br>
-            Robotic Process Automation
-        </div>
-        <div class="card-footer">
-            <img class="tech_stack" src="../../../../assets/img/CSharp.png">
-            <img class="tech_stack" src="../../../../assets/img/BluePrism.png">
-        </div>
-    </div>
-    <div class="card position">
-        <div class="card-header header">
-            PC Windows Software Engineer || DXC Technology || March 2016 - October 2018
-        </div>
-        <div class="card-body">
-            Backend development <br>
-            Scripts development <br>
-            Application support
-        </div>
-        <div class="card-footer">
-            <img class="tech_stack" src="../../../../assets/img/VB.png">
-            <img class="tech_stack" src="../../../../assets/img/CSharp.png">
-            <img class="tech_stack" src="../../../../assets/img/DotNetCore.png">
-        </div>
-    </div>
-
-
 </div>

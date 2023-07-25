@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Texts } from 'src/app/models/texts';
 import { LanguageService } from 'src/app/services/language/language.service';
 
@@ -19,7 +20,7 @@ export class NavbarComponent implements OnInit {
     language: ""
   }
 
-  constructor(private languageService:LanguageService) { 
+  constructor(private languageService:LanguageService, private router:Router) { 
     this.texts.es = {
       aboutme : "Sobre mí",
       experience: "Experiencia",
@@ -56,7 +57,6 @@ export class NavbarComponent implements OnInit {
       language: "Spräche"
     }
     this.currentTexts = this.languageService.selectTexts(this.texts);
-
   }
 
   ngOnInit(): void {
@@ -65,6 +65,11 @@ export class NavbarComponent implements OnInit {
   changeLanguage(language:string){
     this.languageService.changeLanguage(language);
     this.currentTexts = this.languageService.selectTexts(this.texts);
+    console.log("LA RUTA ES: " + this.router.url);
+    this.router.navigateByUrl(this.router.url, {skipLocationChange: true}).then(()=>{
+      this.router.navigate([this.router.url]);
+      console.log("Recargado el componente");
+    });
   }
 
 

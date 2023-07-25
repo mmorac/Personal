@@ -1,10 +1,54 @@
-<div class="project" *ngFor="let project of projects">
-        <div class="icon_container">
-            <i [className]="project.icon"></i>
-        </div>
-        <div class="text_container">
-            <a href="{{project.url}}" target="_blank">
-                <h4>{{project.name}}</h4>
-            </a>
-        </div>
+<div class="container projects">
+    <table>
+        <tr *ngFor="let project of projects">
+            <td class="icon_container">
+                <i [className]="project.icon"></i>
+            </td>
+            <td class="text_container">
+                <a href="{{project.url}}" target="_blank">
+                    <h6>{{project.name}}</h6>
+                </a>
+            </td>
+        </tr>
+    </table>
 </div>
+
+<div id="user-role-caro" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel-inner">
+      <div class="carousel-item active h-100">
+        <div class="text-center">
+          <h5 class="text-transform-unset font-weight-medium my-2 bg-info text-white">ONE</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item h-100">
+        <div class="text-center">
+          <h5 class="text-transform-unset font-weight-medium my-2 bg-dark text-white">TWO</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item h-100">
+        <div class="text-center">
+          <h5 class="text-transform-unset font-weight-medium my-2 bg-warning text-white">THREE</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item h-100">
+        <div class="text-center">
+          <h5 class="text-transform-unset font-weight-medium my-2 bg-primary text-white">FOUR</h5>
+        </div>
+      </div>
+  
+    </div>
+  
+    <ol class="carousel-indicators position-relative mt-4">
+      <li data-target="#user-role-caro" data-slide-to="0" class="active"></li>
+      <li data-target="#user-role-caro" data-slide-to="1"></li>
+      <li data-target="#user-role-caro" data-slide-to="2"></li>
+      <li data-target="#user-role-caro" data-slide-to="3"></li>
+    </ol>
+  
+  </div>
+  
+
