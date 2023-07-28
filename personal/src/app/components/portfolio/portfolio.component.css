@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+
+section {
+    position: fixed !important;
+}
+
+section:not(.first) {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
+
 .projects{
     margin-top: 5%;
 }

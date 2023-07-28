@@ -7,11 +7,12 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
-  {path:'aboutme', component:AboutmeComponent},
-  {path:'experience', component:ExperienceComponent},
-  {path:'education', component:EducationComponent},
-  {path:'portfolio', component:PortfolioComponent},
-  {path:'contact', component:ContactComponent}
+  {path:'aboutme', component:AboutmeComponent, data:{ animationState: 'first'}},
+  {path:'experience', component:ExperienceComponent, data:{ animationState: 'second'}},
+  {path:'education', component:EducationComponent, data:{ animationState: 'third'}},
+  {path:'portfolio', component:PortfolioComponent, data:{ animationState: 'fourth'}},
+  {path:'contact', component:ContactComponent, data:{ animationState: 'fifth'}},
+  {path:'**', redirectTo:'aboutme'}
 ];
 
 @NgModule({

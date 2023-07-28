@@ -1,46 +1,50 @@
 .brand{
-    height: 8rem;
+    height: 5rem;
 }
 
 .botonMenu{
-    width: 9rem;
-    height: 6rem;
     text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 25px 30px;
-    margin: 40px 0;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 4px;
-    overflow: hidden;
-    margin-right: 50px;    
-}
-
-.botonMenu:hover{
-    background: #fff;
-    color: #050801;
-    box-shadow: 0 0 5px #ccc,
-                0 0 25px #ccc,
-                0 0 50px #ccc,
-                0 0 200px #ccc;
-     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    vertical-align: middle;
+    color: #ddd;
+    width: 9rem;
+    height: 5rem;
 }
 
 .botonIdiomas{
-    position: relative;
-    display: inline-block;
-    padding: 25px 30px;
-    margin: 40px 0;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 4px;
-    overflow: hidden;
-    margin-right: 50px;    
+    text-align: center;
+    vertical-align: middle;
+    color: #ddd;
+    width: 9rem;
+    height: 5rem;
+}
+
+.botonMenu:hover{
+    background-color: #ddd;
+    color: #222;
+    transition-delay: 0.3s;
+}
+
+.botonIdioma:hover{
+    background-color: #ddd;
+    color: #222;
+    transition-delay: 0.3s;
+}
+
+ul{
+    background-color: #222;    
+}
+
+a{
+    background-color: #222;
+    color: #ddd;
+}
+
+a:hover{
+    background-color: #ddd;
+    color: #222;
+    transition-delay: 0.3s;
+}
+
+nav{
+    background-color: #222;
 }

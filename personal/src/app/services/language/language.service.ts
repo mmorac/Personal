@@ -9,6 +9,41 @@ export class LanguageService {
   currentLanguage = "es";
 
   texts = {
+    navbar:{
+      es: {
+        aboutme : "Sobre mí",
+        experience: "Experiencia",
+        education: "Educación y habilidades",
+        portfolio: "Portafolio",
+        contact: "Contacto",
+        language: "Idioma"
+      },
+      en: {
+        aboutme : "About me",
+        experience: "Experience",
+        education: "Education and skills",
+        portfolio: "Portfolio",
+        contact: "Contact",
+        language: "Language"
+      },
+      pt: {
+        aboutme : "Sobre mim",
+        experience: "Experiéncia",
+        education: "Educacão e habilidades",
+        portfolio: "Portafólio",
+        contact: "Contato",
+        language: "Idioma"
+      },
+      de: {
+        aboutme : "Über mich",
+        experience: "Erfahrung",
+        education: "Ausbildung und Fähigkeiten",
+        portfolio: "Portfolio",
+        contact: "Kontakt",
+        language: "Spräche"
+      }
+  
+    },
     portfolio:{
       es : {
         ExploreWeather: "Aplicación de seguimiento del clima en consola.",
@@ -318,6 +353,9 @@ export class LanguageService {
       }
       case "education":{
         return this.selectTexts(this.texts.education);
+      }
+      case "navbar":{
+        return this.selectTexts(this.texts.navbar);
       }
     }
   }

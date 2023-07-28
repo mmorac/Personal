@@ -21,42 +21,7 @@ export class NavbarComponent implements OnInit {
   }
 
   constructor(private languageService:LanguageService, private router:Router) { 
-    this.texts.es = {
-      aboutme : "Sobre mí",
-      experience: "Experiencia",
-      education: "Educación y habilidades",
-      portfolio: "Portafolio",
-      contact: "Contacto",
-      language: "Idioma"
-    }
-
-    this.texts.en = {
-      aboutme : "About me",
-      experience: "Experience",
-      education: "Education and skills",
-      portfolio: "Portfolio",
-      contact: "Contact",
-      language: "Language"
-    }
-
-    this.texts.pt = {
-      aboutme : "Sobre mim",
-      experience: "Experiéncia",
-      education: "Educacão e habilidades",
-      portfolio: "Portafólio",
-      contact: "Contato",
-      language: "Idioma"
-    }
-  
-    this.texts.de = {
-      aboutme : "Über mich",
-      experience: "Erfahrung",
-      education: "Ausbildung und Fähigkeiten",
-      portfolio: "Portfolio",
-      contact: "Kontakt",
-      language: "Spräche"
-    }
-    this.currentTexts = this.languageService.selectTexts(this.texts);
+    this.currentTexts = this.languageService.loadComponent("navbar");
   }
 
   ngOnInit(): void {
@@ -64,7 +29,7 @@ export class NavbarComponent implements OnInit {
 
   changeLanguage(language:string){
     this.languageService.changeLanguage(language);
-    this.currentTexts = this.languageService.selectTexts(this.texts);
+    this.currentTexts = this.languageService.loadComponent("navbar");
     console.log("LA RUTA ES: " + this.router.url);
     this.router.navigateByUrl(this.router.url, {skipLocationChange: true}).then(()=>{
       this.router.navigate([this.router.url]);
