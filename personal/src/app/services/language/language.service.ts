@@ -313,7 +313,30 @@ export class LanguageService {
           location: "Alajuela, Costa Rica"
         }
       ]
+    },
+    aboutme:{
+      es:[
+        {
+          video: "https://www.youtube.com/embed/BDNqGzCjLQM"
+        }
+      ],
+      en:[
+        {
+          video: "https://www.youtube.com/embed/wRehLraJXuk"
+        }
+      ],
+      pt:[
+        {
+          video: "https://www.youtube.com/embed/wExOZTFrmRU"
+        }
+      ],
+      de:[
+        {
+          video: "https://www.youtube.com/embed/ROz9D7NPEjY"
+        }
+      ]
     }
+
   }
 
 
@@ -353,6 +376,9 @@ export class LanguageService {
       }
       case "education":{
         return this.selectTexts(this.texts.education);
+      }
+      case "aboutme":{
+        return this.selectTexts(this.texts.aboutme);
       }
       case "navbar":{
         return this.selectTexts(this.texts.navbar);
